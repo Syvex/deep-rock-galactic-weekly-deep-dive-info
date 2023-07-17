@@ -1,0 +1,20 @@
+{
+  "name": "stackblitz-starters-adfu2r",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "zlib": "^1.0.5"
+  },
+  "scripts": {
+    "axios": "latest",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "react-scripts": "latest"
+  }
+}
