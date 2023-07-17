@@ -5,7 +5,7 @@ import DeepDiveList from './DeepDiveList';
 const App = () => {
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
+      <h1>ROCK AND STONE</h1>
       <DeepDiveList />
     </div>
   );
