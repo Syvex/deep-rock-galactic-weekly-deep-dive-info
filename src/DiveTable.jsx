@@ -7,13 +7,12 @@ import {
   TableHead,
   TableRow,
   Paper,
-  Button,
   Box,
 } from '@mui/material';
 
 const DiveTable = ({ diveData }) => (
   <div>
-    {diveData?.variants.map((deepDive, index) => (
+    {diveData?.variants?.map((deepDive, index) => (
       <div key={index}>
         <Box
           sx={{
