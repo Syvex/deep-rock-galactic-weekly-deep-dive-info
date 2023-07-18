@@ -4,6 +4,9 @@ import DeepDiveList from './DeepDiveList';
 
 const App = () => {
   const corsProxyServices = [
+    'https://alloworigin.com/get?url=',
+    'https://corsproxy.io/?',
+    'https://thingproxy.freeboard.io/fetch/',
     'https://cors.bridged.cc/',
     'https://crossorigin.me/',
     'https://thingproxy.freeboard.io/fetch/',
