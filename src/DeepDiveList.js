@@ -8,6 +8,8 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Button,
+  Box,
 } from '@mui/material';
 
 const DeepDiveList = ({ corsProxies }) => {
@@ -31,38 +33,44 @@ const DeepDiveList = ({ corsProxies }) => {
 
   return (
     <div>
-      <button onClick={() => getDeepDives()}>get deep dives</button>
+      <Button
+        sx={{ mb: 2 }}
+        color="primary"
+        variant="contained"
+        onClick={() => getDeepDives()}
+      >
+        get deep dive info
+      </Button>
       <div>
-        <h1>Deep Dives</h1>
         {apiData?.variants.map((deepDive, index) => (
           <div key={index}>
-            <h2>{deepDive.type}</h2>
-            <h3>{deepDive.name}</h3>
-            <p>Biome: {deepDive.biome}</p>
-            <p>Seed: {deepDive.seed}</p>
-            <h4>Stages:</h4>
-
-            <TableContainer sx={{ maxWidth: 800 }} component={Paper}>
+            <Box sx={{ pb: 1, display: 'flex', flexDirection: 'column' }}>
+              <span>Name: {deepDive.name}</span>
+              <span>Biome: {deepDive.biome}</span>
+            </Box>
+            <TableContainer sx={{ maxWidth: 800, mb: 4 }} component={Paper}>
               <Table aria-label="ddtable">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Stage</TableCell>
-                    <TableCell align="right">Primary</TableCell>
-                    <TableCell align="right">Secondary</TableCell>
-                    <TableCell align="right">Warning</TableCell>
-                    <TableCell align="right">Anomaly</TableCell>
+                    <TableCell align="left">
+                      <h2>{deepDive.type}</h2>
+                    </TableCell>
+                    <TableCell align="left">Primary</TableCell>
+                    <TableCell align="left">Secondary</TableCell>
+                    <TableCell align="left">Warning</TableCell>
+                    <TableCell align="left">Anomaly</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {deepDive.stages.map((stage, stageIndex) => (
                     <TableRow key={stageIndex}>
-                      <TableCell component="th" scope="row">
+                      <TableCell align="left" component="th" scope="row">
                         {stage.id}
                       </TableCell>
-                      <TableCell align="right">{stage.primary}</TableCell>
-                      <TableCell align="right">{stage.secondary}</TableCell>
-                      <TableCell align="right">{stage.warning}</TableCell>
-                      <TableCell align="right">{stage.anomaly}</TableCell>
+                      <TableCell align="left">{stage.primary}</TableCell>
+                      <TableCell align="left">{stage.secondary}</TableCell>
+                      <TableCell align="left">{stage.warning}</TableCell>
+                      <TableCell align="left">{stage.anomaly}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
