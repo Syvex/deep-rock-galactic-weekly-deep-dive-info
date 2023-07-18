@@ -38,7 +38,7 @@ const DeepDiveList = ({ corsProxies }) => {
 
   const getDeepDivesWithUserInput = React.useCallback((userCorsProxy) => {
     const fetchUrl =
-      userCorsProxy?.toString() + 'https://drgapi.com/v1/deepdives';
+      userCorsProxy.toString() + 'https://drgapi.com/v1/deepdives';
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
 
