@@ -1,22 +1,21 @@
 import React from 'react';
 import './style.css';
 
-const DeepDiveList = () => {
+const DeepDiveList = ({ corsProxies }) => {
   const [apiData, setApiData] = React.useState();
+  let i = 0;
 
+  // going through a list of different cors proxy services until
+  // it either succeeds or there are no more entries in the list
   const getDeepDives = React.useCallback(() => {
-    /* other cors proxy services (in case one doesn't work):
-    - https://crossorigin.me/
-    - https://cors.bridged.cc/
-    - https://thingproxy.freeboard.io/fetch/
-    - https://yacdn.org/proxy/
-    */
-    const proxyUrl = 'https://cors.bridged.cc/'; // CORS-Proxy-Service
-
-    fetch(proxyUrl + 'https://drgapi.com/v1/deepdives')
+    fetch(corsProxies[i] + 'https://drgapi.com/v1/deepdives')
       .then((res) => res.json())
       .then((data) => setApiData(data))
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        console.log(error, i);
+        i += 1;
+        i < corsProxies.length && getDeepDives();
+      });
   });
 
   console.log(apiData);
