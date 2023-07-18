@@ -8,11 +8,16 @@ const App = () => {
     'https://crossorigin.me/',
     'https://thingproxy.freeboard.io/fetch/',
     'https://yacdn.org/proxy/',
-    'https://cors.bridged.cc/',
   ];
 
   return (
-    <div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
       <h1>ROCK AND STONE</h1>
       <DeepDiveList corsProxies={corsProxyServices} />
     </div>
