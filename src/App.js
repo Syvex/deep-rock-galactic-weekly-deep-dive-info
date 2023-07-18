@@ -4,10 +4,10 @@ import DeepDiveList from './DeepDiveList';
 
 const App = () => {
   const corsProxyServices = [
-    'https://cors.bridged.cc/g',
-    'https://crossorigin.me/g',
-    'https://thingproxy.freeboard.io/fetch/g',
-    'https://yacdn.org/proxy/g',
+    'https://cors.bridged.cc/',
+    'https://crossorigin.me/',
+    'https://thingproxy.freeboard.io/fetch/',
+    'https://yacdn.org/proxy/',
   ];
 
   return (

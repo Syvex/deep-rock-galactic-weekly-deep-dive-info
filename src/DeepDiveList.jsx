@@ -10,9 +10,9 @@ const DeepDiveList = ({ corsProxies }) => {
   const [showFetchErrorInfo, setShowFetchErrorInfo] = React.useState(false);
   let i = 0;
 
-  // going through a list of different cors proxy services until
-  // it either succeeds or there are no more entries in the list
   const getDeepDives = React.useCallback(() => {
+    // going through a list of different cors proxy services until
+    // it either succeeds or there are no more entries in the list
     const fetchUrl = corsProxies[i] + 'https://drgapi.com/v1/deepdives';
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
@@ -46,7 +46,6 @@ const DeepDiveList = ({ corsProxies }) => {
       .then((res) => res.json())
       .then((data) => {
         setApiData(data);
-        // 5s delay once data has been loaded before button is usable again to prevent spam
         setTimeout(() => setDisableInfoBtn(false), 5000);
       })
       .catch((error) => {
