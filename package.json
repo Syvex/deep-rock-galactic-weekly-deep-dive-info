@@ -3,6 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "@types/react": "^17.0.0 || ^18.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "zlib": "^1.0.5"
