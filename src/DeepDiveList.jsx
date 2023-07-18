@@ -29,7 +29,7 @@ const DeepDiveList = ({ corsProxies }) => {
       .catch((error) => {
         console.log(error, i);
         i += 1;
-        if (i < corsProxies.length) {
+        if (!userCorsProxy && i < corsProxies.length) {
           getDeepDives();
         } else {
           setShowFetchErrorInfo(true);
