@@ -1,12 +1,11 @@
 import React from 'react';
 import { TextField, Button } from '@mui/material';
 
-const FetchError = ({ getDeepDives, setUserCorsProxy }) => {
+const FetchError = ({ getDeepDivesWithUserInput }) => {
   const [userInput, setUserInput] = React.useState('');
 
   const handleSumbit = () => {
-    setUserCorsProxy(userInput);
-    getDeepDives();
+    getDeepDivesWithUserInput(userInput);
   };
 
   return (
