@@ -1,5 +1,14 @@
 import React from 'react';
 import './style.css';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Paper,
+} from '@mui/material';
 
 const DeepDiveList = ({ corsProxies }) => {
   const [apiData, setApiData] = React.useState();
@@ -32,14 +41,33 @@ const DeepDiveList = ({ corsProxies }) => {
             <p>Biome: {deepDive.biome}</p>
             <p>Seed: {deepDive.seed}</p>
             <h4>Stages:</h4>
-            <ul>
-              {deepDive.stages.map((stage, stageIndex) => (
-                <li key={stageIndex}>
-                  Stage {stage.id}: {stage.primary}, {stage.secondary},{' '}
-                  {stage.warning}, {stage.anomaly}
-                </li>
-              ))}
-            </ul>
+
+            <TableContainer sx={{ maxWidth: 800 }} component={Paper}>
+              <Table aria-label="ddtable">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Stage</TableCell>
+                    <TableCell align="right">Primary</TableCell>
+                    <TableCell align="right">Secondary</TableCell>
+                    <TableCell align="right">Warning</TableCell>
+                    <TableCell align="right">Anomaly</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {deepDive.stages.map((stage, stageIndex) => (
+                    <TableRow key={stageIndex}>
+                      <TableCell component="th" scope="row">
+                        {stage.id}
+                      </TableCell>
+                      <TableCell align="right">{stage.primary}</TableCell>
+                      <TableCell align="right">{stage.secondary}</TableCell>
+                      <TableCell align="right">{stage.warning}</TableCell>
+                      <TableCell align="right">{stage.anomaly}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </div>
         ))}
       </div>
