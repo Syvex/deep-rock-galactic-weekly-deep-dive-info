@@ -24,6 +24,26 @@ const DeepDiveList = () => {
   return (
     <div>
       <button onClick={() => getDeepDives()}>get deep dives</button>
+      <div>
+        <h1>Deep Dives</h1>
+        {apiData?.variants.map((deepDive, index) => (
+          <div key={index}>
+            <h2>{deepDive.type}</h2>
+            <h3>{deepDive.name}</h3>
+            <p>Biome: {deepDive.biome}</p>
+            <p>Seed: {deepDive.seed}</p>
+            <h4>Stages:</h4>
+            <ul>
+              {deepDive.stages.map((stage, stageIndex) => (
+                <li key={stageIndex}>
+                  Stage {stage.id}: {stage.primary}, {stage.secondary},{' '}
+                  {stage.warning}, {stage.anomaly}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
