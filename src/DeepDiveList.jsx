@@ -10,18 +10,14 @@ const DeepDiveList = () => {
   const [showFetchErrorInfo, setShowFetchErrorInfo] = React.useState(false);
 
   const getDeepDives = async () => {
-    // going through a list of different cors proxy services until
-    // it either succeeds or there are no more entries in the list
-    const fetchUrl = 'https://drgapi.com/v1/deepdives';
+    const proxy = 'https://corsproxy.io/?';
+    const apiUrl = 'https://drgapi.com/v1/deepdives';
+    const fetchUrl = proxy + apiUrl;
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
 
-    await fetch(fetchUrl, {
-      method: 'GET',
-    })
-      .then((response) => {
-        response.json();
-      })
+    await fetch(fetchUrl)
+      .then((response) => response.json())
       .then((data) => {
         console.log(data);
         setApiData(data);
