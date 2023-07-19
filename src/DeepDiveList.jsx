@@ -16,8 +16,10 @@ const DeepDiveList = () => {
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
 
-    await fetch(fetchUrl)
-      .then((response) => response.json())
+    await fetch(fetchUrl, { method: 'GET' })
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         console.log(data);
         setApiData(data);
@@ -41,7 +43,7 @@ const DeepDiveList = () => {
     >
       <Button
         disabled={disableInfoBtn}
-        sx={{ mb: 2 }}
+        sx={{ mb: 4 }}
         color="primary"
         variant="contained"
         onClick={() => getDeepDives()}
