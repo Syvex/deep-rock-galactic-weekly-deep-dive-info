@@ -1,9 +1,9 @@
 # deep-rock-galactic-weekly-deep-dive-info
 
-Basic React App to display the details of weekly deep dives.
+Basic React-App to fetch and display the details of the weekly deep dives.
 
-Currently relying on a cors proxy service to access the api, looking to change that in the future.
-If I ever get this CORS Error fixed to not rely on a proxy anymore, I'm planning to extend this tool by the following features:
+Currently relying on a CORS proxy service to access the api, looking to change that in the future.
+If the CORS proxy dependency can be fixed, I'm planning to extend this tool by the following features:
 
 - Countdown to weekly reset
 - Build suggestions based on Missions, Warnings and Anomalies (biggest feature, lots of work)
