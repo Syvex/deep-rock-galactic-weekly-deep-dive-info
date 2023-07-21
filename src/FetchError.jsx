@@ -12,7 +12,9 @@ const FetchError = () => {
       <p>
         <b>Something went wrong while fetching the data.</b>
       </p>
-      <p>Either traffic is high or the API is currently unavailable.</p>
+      <p>
+        Either the API is currently unavailable or something different happened.
+      </p>
       <p>
         <b>Just press the button once more to try again.</b>
       </p>
