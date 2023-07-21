@@ -11,7 +11,7 @@ const DeepDiveList = () => {
 
   const getDeepDives = async () => {
     const proxy = 'https://corsproxy.io/?';
-    const apiUrl = 'https://drgapi.com/v1/deepdives';
+    const apiUrl = encodeURIComponent('https://drgapi.com/v1/deepdives');
     const fetchUrl = proxy + apiUrl;
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
