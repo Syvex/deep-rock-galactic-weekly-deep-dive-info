@@ -16,12 +16,16 @@ const DeepDiveList = () => {
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
 
-    await fetch(fetchUrl, { method: 'GET' })
+    await fetch(fetchUrl, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setApiData(data);
         // 5s delay once data has been loaded before button is usable again to prevent spam
         setTimeout(() => setDisableInfoBtn(false), 5000);
