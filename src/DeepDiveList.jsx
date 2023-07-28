@@ -10,9 +10,9 @@ const DeepDiveList = () => {
   const [showFetchErrorInfo, setShowFetchErrorInfo] = React.useState(false);
 
   const getDeepDives = async () => {
-    const proxy = 'https://corsproxy.io/?';
-    const apiUrl = encodeURIComponent('https://drgapi.com/v1/deepdives');
-    const fetchUrl = proxy + apiUrl;
+    // const proxy = 'https://corsproxy.io/?';
+    // const apiUrl = encodeURIComponent('https://drgapi.com/v1/deepdives');
+    const fetchUrl = 'https://drgapi.com/v1/deepdives';
     setShowFetchErrorInfo(false);
     setDisableInfoBtn(true);
 
