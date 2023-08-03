@@ -48,15 +48,13 @@ const DeepDiveList = () => {
       <Button
         disabled={disableInfoBtn}
         sx={{ mb: 4 }}
-        color="primary"
         variant="contained"
         onClick={() => getDeepDives()}
       >
-        get deep dive info
+        <b>get deep dive info</b>
       </Button>
-      {(showFetchErrorInfo && <FetchError />) || (
-        <DiveTable diveData={apiData} />
-      )}
+      {(showFetchErrorInfo && <FetchError />) ||
+        (apiData && <DiveTable diveData={apiData} />)}
     </div>
   );
 };
