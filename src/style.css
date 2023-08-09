@@ -1,7 +1,8 @@
 :root {
   --bg-color-no-content: rgb(32, 35, 36);
   --bg-color-content: rgb(69, 74, 77);
-  --gentle-white: rgb(245, 245, 245);
+  --gentle-white: rgb(226, 223, 219);
+  --bg-color-table: rgb(57, 61, 64);
 }
 
 body {
@@ -11,6 +12,12 @@ body {
   background-color: var(--bg-color-no-content);
   padding: 0;
   margin: 0;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--gentle-white);
+  font-weight: bold;
 }
 
 .content-wrapper {
@@ -28,8 +35,12 @@ body {
   color: var(--gentle-white);
 }
 
+.text-contrast > * {
+  color: var(--gentle-white);
+}
+
 .table-wrapper {
-  background-color: var(--gentle-white);
+  background-color: var(--bg-color-no-content);
   padding: 8px 16px 16px;
   margin-bottom: 20px;
   border-radius: 12px;

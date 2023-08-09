@@ -8,6 +8,7 @@ const FetchError = () => {
         flexDirection: 'column',
         alignItems: 'center',
       }}
+      className="text-contrast"
     >
       <p>
         <b>Something went wrong while fetching the data.</b>

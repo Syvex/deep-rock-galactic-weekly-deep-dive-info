@@ -21,21 +21,25 @@ const DiveTable = ({ diveData }) => {
               display: 'flex',
               flexDirection: 'column',
               fontWeight: 'bold',
+              color: 'var(--gentle-white)',
             }}
           >
             <span>Name: {deepDive.name}</span>
             <span>Biome: {deepDive.biome}</span>
           </Box>
           <TableContainer
-            sx={{ maxWidth: 800 }}
+            sx={{
+              maxWidth: 800,
+              backgroundColor: 'var(--bg-color-table)',
+            }}
             component={Paper}
             elevation={0}
             variant="outlined"
           >
-            <Table aria-label="ddtable">
+            <Table aria-label="ddtable" className="text-contrast">
               <TableHead>
-                <TableRow>
-                  <TableCell sx={{ width: 180 }}>
+                <TableRow className="text-contrast">
+                  <TableCell>
                     <h2>{deepDive.type}</h2>
                   </TableCell>
                   <TableCell>
@@ -54,7 +58,7 @@ const DiveTable = ({ diveData }) => {
               </TableHead>
               <TableBody>
                 {deepDive.stages.map((stage, stageIndex) => (
-                  <TableRow key={stageIndex}>
+                  <TableRow key={stageIndex} className="text-contrast">
                     <TableCell align="left" component="th" scope="row">
                       {stage.id}
                     </TableCell>
