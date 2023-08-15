@@ -32,7 +32,6 @@ const DiveTable = ({ diveData }) => {
               maxWidth: 800,
               backgroundColor: 'var(--bg-color-table)',
             }}
-            color={theme.table}
             component={Paper}
             elevation={0}
             variant="outlined"
