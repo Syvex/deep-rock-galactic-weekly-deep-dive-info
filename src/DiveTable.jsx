@@ -32,11 +32,12 @@ const DiveTable = ({ diveData }) => {
               maxWidth: 800,
               backgroundColor: 'var(--bg-color-table)',
             }}
+            color={theme.table}
             component={Paper}
             elevation={0}
             variant="outlined"
           >
-            <Table aria-label="ddtable" className="text-contrast">
+            <Table aria-label="ddtable">
               <TableHead>
                 <TableRow className="text-contrast">
                   <TableCell>
@@ -58,7 +59,13 @@ const DiveTable = ({ diveData }) => {
               </TableHead>
               <TableBody>
                 {deepDive.stages.map((stage, stageIndex) => (
-                  <TableRow key={stageIndex} className="text-contrast">
+                  <TableRow
+                    key={stageIndex}
+                    className="text-contrast"
+                    sx={{
+                      borderBottom: '1px solid black',
+                    }}
+                  >
                     <TableCell align="left" component="th" scope="row">
                       {stage.id}
                     </TableCell>
