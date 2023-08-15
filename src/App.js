@@ -11,12 +11,6 @@ const theme = createTheme({
       dark: '#6fbf73',
       contrastText: 'rgb(226, 223, 219)',
     },
-    table: {
-      light: '#357a38',
-      main: '#4caf50',
-      dark: '#6fbf73',
-      contrastText: 'rgb(226, 223, 219)',
-    },
   },
 });
 
