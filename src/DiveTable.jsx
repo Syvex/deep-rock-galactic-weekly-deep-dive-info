@@ -66,7 +66,7 @@ const DiveTable = ({ diveData }) => {
                     }}
                   >
                     <TableCell align="left" component="th" scope="row">
-                      <span>{stage.id}</span>
+                      <span>Stage {stage.id}</span>
                     </TableCell>
                     <TableCell>
                       <span>{stage.primary}</span>
