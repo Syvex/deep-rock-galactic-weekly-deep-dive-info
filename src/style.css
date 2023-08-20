@@ -35,10 +35,6 @@ a {
   color: var(--gentle-white);
 }
 
-.text-contrast > * {
-  color: var(--gentle-white);
-}
-
 .text-contrast > * > * {
   color: var(--gentle-white);
 }

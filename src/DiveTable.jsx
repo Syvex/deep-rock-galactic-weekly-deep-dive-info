@@ -29,7 +29,7 @@ const DiveTable = ({ diveData }) => {
           </Box>
           <TableContainer
             sx={{
-              maxWidth: 800,
+              maxWidth: 900,
               backgroundColor: 'var(--bg-color-table)',
             }}
             component={Paper}
@@ -66,12 +66,20 @@ const DiveTable = ({ diveData }) => {
                     }}
                   >
                     <TableCell align="left" component="th" scope="row">
-                      {stage.id}
+                      <span>{stage.id}</span>
                     </TableCell>
-                    <TableCell>{stage.primary}</TableCell>
-                    <TableCell>{stage.secondary}</TableCell>
-                    <TableCell>{stage.warning}</TableCell>
-                    <TableCell>{stage.anomaly}</TableCell>
+                    <TableCell>
+                      <span>{stage.primary}</span>
+                    </TableCell>
+                    <TableCell>
+                      <span>{stage.secondary}</span>
+                    </TableCell>
+                    <TableCell>
+                      <span>{stage.warning}</span>
+                    </TableCell>
+                    <TableCell>
+                      <span>{stage.anomaly}</span>
+                    </TableCell>
                   </TableRow>
                 ))}
               </TableBody>
